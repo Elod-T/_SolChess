@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      String  @id @default(uuid())
+  name    String
+  wallet  String  @unique
+  gameId  String? 
+}
+
+model Game {
+  id        String   @id @default(uuid())
+  startedAt DateTime @default(now())
+  state     String
+  fen       String
+  white     String
+  black     String
+}

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: glow 4s linear infinite;
+}
+
+@keyframes glow {
+  to {
+    background-position: -200% center;
+  }
+}
+
+.wallet-adapter-button {
+  border-radius: 0.5rem;
+}
